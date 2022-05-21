@@ -1,0 +1,2 @@
+CREATE DATABASE analytics
+WITH OWNER postgres ENCODING = 'UTF8';

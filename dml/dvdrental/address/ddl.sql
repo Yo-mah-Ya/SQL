@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS address;
+CREATE TABLE address (
+    id SERIAL PRIMARY KEY,
+    address CHARACTER VARYING(50) NOT NULL,
+    address2 CHARACTER VARYING(50),
+    district CHARACTER VARYING(20) NOT NULL,
+    city_id SMALLINT NOT NULL,
+    postal_code CHARACTER VARYING(10),
+    phone CHARACTER VARYING(20) NOT NULL,
+    last_update TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL,
+
+    CONSTRAINT fk_address_city FOREIGN KEY (city_id) REFERENCES city(id)
+);

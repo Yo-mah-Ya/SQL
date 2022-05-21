@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS inventory;
+CREATE TABLE inventory (
+    id SERIAL PRIMARY KEY,
+    film_id SMALLINT NOT NULL,
+    store_id SMALLINT NOT NULL,
+    last_update TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL,
+
+    CONSTRAINT inventory_film_id_fkey FOREIGN KEY (film_id) REFERENCES film(id) ON UPDATE CASCADE ON DELETE RESTRICT
+);

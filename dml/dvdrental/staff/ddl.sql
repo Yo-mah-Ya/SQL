@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS staff;
+CREATE TABLE staff (
+    id SERIAL PRIMARY KEY,
+    first_name CHARACTER VARYING(45) NOT NULL,
+    last_name CHARACTER VARYING(45) NOT NULL,
+    address_id SMALLINT NOT NULL,
+    email CHARACTER VARYING(50),
+    store_id SMALLINT NOT NULL,
+    active BOOLEAN DEFAULT true NOT NULL,
+    username CHARACTER VARYING(16) NOT NULL,
+    password CHARACTER VARYING(40),
+    last_update TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL,
+    picture bytea,
+
+    CONSTRAINT staff_address_id_fkey FOREIGN KEY (address_id) REFERENCES address(id) ON UPDATE CASCADE ON DELETE RESTRICT
+);

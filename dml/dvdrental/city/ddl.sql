@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS city;
+CREATE TABLE city (
+    id SERIAL PRIMARY KEY,
+    name CHARACTER VARYING(50) NOT NULL,
+    country_id SMALLINT NOT NULL,
+    last_update TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL,
+
+    CONSTRAINT fk_city FOREIGN KEY (country_id) REFERENCES country(id)
+);

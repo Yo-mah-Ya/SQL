@@ -1,0 +1,12 @@
+{
+  "[sql]": {
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter",
+    // "editor.formatOnSave": true,
+  },
+  // "sql-formatter.uppercase": true,
+  "sql-formatter.linesBetweenQueries": 2,
+  "sql-formatter.dialect": "sql",
+  "cSpell.words": [
+    "Decyl"
+  ]
+}
